@@ -54,31 +54,29 @@ len(words)
 
 from nlp import *
 import pandas as pd
-modals = ['can', 'could', 'may', 'might', 'must', 'will']
+list_of_words = ['can', 'could', 'may', 'might', 'must', 'will']
 
-results =[]
+def ConditionalFreq(list_of_words):
+    results =[]
+    
+    for genre in categories:
+        _ = []
+        for m in list_of_words:
+            _.append(percent(m,brown.words(categories = categories[categories.index(genre)]))[1])
+        results.append(_) 
+        """ Converting the results into dataframe to view the results in tabular format"""
+    df = pd.DataFrame(results)
+    df.columns = list_of_words
 
-for genre in categories:
-    _ = []
-    for m in modals:
-        _.append(percent(m,brown.words(categories = categories[categories.index(genre)]))[1])
-    results.append(_) 
+    """Re indexing the datanames with list of rown mes from dictionary"""
 
-results[0][1]
-""" Converting the results into dataframe to view the results in tabular format"""
-df = pd.DataFrame(results)
-df.columns = modals
+    dict={}
+    for i in range(len(categories)):
+        dict[i] = categories[i]
+    df = df.rename(index = dict)
+    return df
 
-"""Re indexing the datanames with list of rown mes from dictionary"""
-
-dict={}
-for i in range(len(categories)):
-    dict[i] = categories[i]
-dict
-
-df = df.rename(index = dict)
-
-print(df)
+#ConditionalFreq(list_of_words)
 
 """ Import Stopwords"""
 

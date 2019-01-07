@@ -99,14 +99,14 @@ NLTK_Location = r"C:\Users\Richie\AppData\Roaming\nltk_data"
 # =============================================================================
 
 """ Frequency of the word in the text"""
-def normal(text):
+def lower(text):
     text_lower = []
     for i in range(len(text)):
         text_lower.append(text[i][0] + text[i][1:].lower())
     return text_lower
 
-normal(text1)
-
+lower(text1)
+text1[0:10]
 def percent(word,text):
 
     assert type(word) == str
@@ -119,7 +119,22 @@ def percent(word,text):
 
 percent("anxiety",text1)        
         
-            
-            
-            
-            
+def freqDist(text):
+    dict = {}
+    for j in range(len(text)):
+        if text[j] in dict:
+            dict[text[j]] += 1
+        else:
+            dict[text[j]] = 1
+    return dict
+
+# =============================================================================
+# """Test for freqDist and normal vis a vis nltk.FreqDist() method"""
+# b = freqDist(sorted(normal(text1)))
+# len(b)
+# a = nltk.FreqDist(sorted(normal(text1)))
+# len(a)
+# len(a.keys())
+# len(b.keys())
+# a[','] == b[',']
+# =============================================================================
