@@ -5,7 +5,6 @@ Created on Sat Jan  5 10:16:57 2019
 @author: Richie
 """
 import nltk
-from nltk.book import *
 import os
 os.chdir(r"C:\Users\Richie\Desktop\NLP_Python")
 NLTK_Location = r"C:\Users\Richie\AppData\Roaming\nltk_data"
@@ -105,8 +104,8 @@ def lower(text):
         text_lower.append(text[i][0] + text[i][1:].lower())
     return text_lower
 
-lower(text1)
-text1[0:10]
+#lower(text1)
+#text1[0:10]
 def percent(word,text):
 
     assert type(word) == str
@@ -117,7 +116,7 @@ def percent(word,text):
     percent = round((count/len(text))*100,0)
     return percent,count,len(text)
 
-percent("anxiety",text1)        
+#percent("anxiety",text1)        
         
 def freqDist(text):
     dict = {}

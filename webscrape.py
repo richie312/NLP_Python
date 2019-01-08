@@ -6,15 +6,15 @@ Created on Mon Jan  7 10:36:34 2019
 """
 
 import nltk
-import urllib2
 from bs4 import BeautifulSoup
 import requests
+from nlp import *
+from corpora import *
 
 """Accessing the text from web and from Disk"""
-
-page = requests.get("http://news.bbc.co.uk/2/hi/health/2284783.stm")
-page2 = requests.get("https://www.dataquest.io/blog/web-scraping-tutorial-python/")
-raw_text_soup = BeautifulSoup(page2.content,'html.parser')
+print("Please paste the url here...")
+page = requests.get(str(input()))
+raw_text_soup = BeautifulSoup(page.content,'html.parser')
 
 """Get the text from paragraph class of the html content"""
 sent = []
@@ -43,11 +43,15 @@ for i in range(len(modals)):
 
 
 Expression = {"must":"Strong Obligation" ,"might":"Logical Conclusion",
-              "can":"Ability","could":"Possibility","may":"Permission",
-              "shall":"Probability","should":"advice"}
+              "can":"Ability","could":"Possibility","may":"possibility - probability",
+              "shall":"Probability","should":"advice","will":"Polite","would":"Polite statement"}
 
 
 for i in dict.keys():
     if dict[i] == max(dict.values()):
         print("The nature of this excerpt is more or less: "+str(Expression[i])+str('.')+
               str(" For more informaiton, please check https://www.myenglishpages.com/site_php_files/grammar-lesson-modals.php"))
+        
+        
+        
+

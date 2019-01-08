@@ -7,38 +7,40 @@ Created on Sun Jan  6 11:16:17 2019
 import os
 os.chdir(r"C:\Users\Richie\Desktop\NLP_Python")
 import nltk
-from nltk.corpus import gutenberg
-gutenberg.fileids()
-
-emma = nltk.corpus.gutenberg.words("austen-emma.txt")
-len(set(emma))
-
-emma = nltk.Text(emma)
-
-emma.concordance("surprize")
-
-"""Sentences"""
-dir(emma)
-emma_sentences = gutenberg.sents("austen-emma.txt")
-
-""" Find out the longest sentence in the emma text"""
-
-longest_len = max([len(w) for w in emma_sentences])
-[s for s in emma_sentences if len(s) == longest_len]
-
-for s in emma_sentences:
-    if len(s) == longest_len:
-        print(s)
-""" Brown Corpus (Brown University, 1960s)"""
-
-from nltk.corpus import brown
-
-categories = brown.categories()
-
-words = brown.words(categories = categories[categories.index("government")])
-' '.join(words[0:])
-len(words)
-
+#from nltk.corpus import gutenberg
+# =============================================================================
+# gutenberg.fileids()
+# 
+# emma = nltk.corpus.gutenberg.words("austen-emma.txt")
+# len(set(emma))
+# 
+# emma = nltk.Text(emma)
+# 
+# emma.concordance("surprize")
+# 
+# """Sentences"""
+# dir(emma)
+# emma_sentences = gutenberg.sents("austen-emma.txt")
+# 
+# """ Find out the longest sentence in the emma text"""
+# 
+# longest_len = max([len(w) for w in emma_sentences])
+# [s for s in emma_sentences if len(s) == longest_len]
+# 
+# for s in emma_sentences:
+#     if len(s) == longest_len:
+#         print(s)
+# """ Brown Corpus (Brown University, 1960s)"""
+# 
+# from nltk.corpus import brown
+# 
+# categories = brown.categories()
+# 
+# words = brown.words(categories = categories[categories.index("government")])
+# ' '.join(words[0:])
+# len(words)
+# 
+# =============================================================================
 """ Frequency Distribution of words in given words"""
 
 # =============================================================================
@@ -77,12 +79,6 @@ def ConditionalFreq(list_of_words):
     return df
 
 #ConditionalFreq(list_of_words)
-
-""" Import Stopwords"""
-
-from nltk.corpus import stopwords
-
-stopwords.words('english')
 
 
     
