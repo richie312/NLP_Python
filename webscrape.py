@@ -51,7 +51,3 @@ for i in dict.keys():
     if dict[i] == max(dict.values()):
         print("The nature of this excerpt is more or less: "+str(Expression[i])+str('.')+
               str(" For more informaiton, please check https://www.myenglishpages.com/site_php_files/grammar-lesson-modals.php"))
-        
-        
-        
-
