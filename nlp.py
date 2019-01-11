@@ -137,3 +137,34 @@ def freqDist(text):
 # len(b.keys())
 # a[','] == b[',']
 # =============================================================================
+"""User Defined Stemming Functions"""
+
+from words_function import *
+
+suffix = ['ing', 'ly', 'ed', 'ious', 'ies', 'ive', 'es', 's', 'ment','er','ion']
+
+def stem(word):
+    for string in suffix:
+        if word.endswith(string):
+            for i in range(len(string)):
+                if is_word(wordlist,word[:-len(string)+i]):
+                    return word[:-len(string)+i]
+                elif is_word(wordlist,word[:-len(string)-i]):
+                    return word[:-len(string)-i]
+    else: return word
+    
+    
+"""Check with the word"""
+stem("Embarrassement")
+word="Embarrassement"
+is_word(wordlist,word[:-4])
+
+stem('Calculate')
+
+"""Check with a sentence"""
+text="unindent does not match any outer indentation level"
+list_of_words = text.split()
+
+stemmed_words = [stem(v) for v in list_of_words]
+
+print("{}".format(stemmed_words))
