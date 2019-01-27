@@ -6,7 +6,6 @@ Created on Sat Jan  5 10:16:57 2019
 """
 import nltk
 import os
-os.chdir(r"C:\Users\Richie\Desktop\NLP_Python")
 NLTK_Location = r"C:\Users\Richie\AppData\Roaming\nltk_data"
 #nltk.download()
 

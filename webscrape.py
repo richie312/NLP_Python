@@ -19,7 +19,7 @@ raw_text_soup = BeautifulSoup(page.content,'html.parser')
 """Get the text from paragraph class of the html content"""
 sent = []
 chars=raw_text_soup.ASCII_SPACES + str('"')
-
+type(para_text)
 for para in range(len(raw_text_soup.find_all('p'))):
     para_text = raw_text_soup.find_all('p')[para].get_text()
     for char in para_text:

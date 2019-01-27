@@ -6,9 +6,6 @@ import string
 import random
 import os
 
-os.chdir(r"C:\Users\Richie\Desktop\NLP_Python")
-
-
 WORDLIST_FILENAME = "words.txt"
 
 # -----------------------------------
