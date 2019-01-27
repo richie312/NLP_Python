@@ -17,6 +17,7 @@ raw_soup = BeautifulSoup(page.content,'html.parser')
 images = raw_soup.find_all('img')
 
 for image in images:
-    print(image.attrs.get('src'))
+    print("{0:20}{1:20}".format("Title","links"))
     print(image.attrs.get('title'))
+    print(image.attrs.get('src'))
 
